@@ -17,7 +17,9 @@ func main() {
 	// This is string concatenation
 	var firstString string = "Hello"
 	var secondString string = "World"
+	var inferenceTypeCheck = "Nikilesh"
 
 	fmt.Printf("%v %.2f %v %q\n", smsSendingLimit, costPerSMS, hasPermission, username)
-	fmt.Printf("%q", firstString+" "+secondString)
+	fmt.Printf("%q\n", firstString+" "+secondString)
+	fmt.Println(inferenceTypeCheck)
 }
