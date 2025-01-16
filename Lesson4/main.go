@@ -2,6 +2,10 @@ package main
 
 import "fmt"
 
+func thisIsAShortFormForParams(x, y, z int) (int, int) {
+	return x + y + z, x - y - z
+}
+
 func thisIsAFunctionWithATupleReturnType(x int, y int) (int, int) {
 	return x + y, x - y
 }
@@ -32,4 +36,7 @@ func main() {
 	_ = thisIsAFunctionWithOneReturnType(2, 3)
 
 	// _ := "Nikilesh" is not possible
+
+	total, deducted = thisIsAShortFormForParams(1, 2, 3)
+	fmt.Printf("This is from the short hand function signature => sum is %v and difference is %v", total, deducted)
 }
