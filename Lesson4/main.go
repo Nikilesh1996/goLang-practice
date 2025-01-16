@@ -2,6 +2,12 @@ package main
 
 import "fmt"
 
+func nakedReturn() (x, y int) {
+	// Don't need to declare these variables
+	x, y = 10, 20
+	return
+}
+
 func thisIsAShortFormForParams(x, y, z int) (int, int) {
 	return x + y + z, x - y - z
 }
@@ -38,5 +44,9 @@ func main() {
 	// _ := "Nikilesh" is not possible
 
 	total, deducted = thisIsAShortFormForParams(1, 2, 3)
-	fmt.Printf("This is from the short hand function signature => sum is %v and difference is %v", total, deducted)
+	fmt.Printf("This is from the short hand function signature => sum is %v and difference is %v\n", total, deducted)
+
+	// This is for naked return
+	x, y := nakedReturn()
+	fmt.Printf("This is from naked return %v %v\n", x, y)
 }
