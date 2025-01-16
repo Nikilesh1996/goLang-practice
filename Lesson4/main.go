@@ -23,7 +23,7 @@ func main() {
 	const thisIsAConstant = "constant"
 	statement := fmt.Sprintf("This is a statement with a constant: %v\n", thisIsAConstant)
 
-	fmt.Printf(statement)
+	fmt.Println(statement)
 	thisIsAFunctionWithNoReturnTypes(1, 2)
 	sum := thisIsAFunctionWithOneReturnType(1, 2)
 
