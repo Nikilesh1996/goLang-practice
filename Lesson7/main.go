@@ -3,27 +3,27 @@ package main
 import "fmt"
 
 // This is to demostrate the usage of structure
-type messageToSend struct {
+type MessageToSend struct {
 	message string
 
 	// This is a nested structure
-	sender   user
-	receiver user
+	sender   User
+	receiver User
 }
 
-type user struct {
+type User struct {
 	name   string
 	number int
 }
 
 func main() {
-	message := messageToSend{
+	message := MessageToSend{
 		message: "Hello world!",
-		sender: user{
+		sender: User{
 			name:   "Nikilesh",
 			number: 9,
 		},
-		receiver: user{
+		receiver: User{
 			name:   "Niveda",
 			number: 7,
 		},
