@@ -37,8 +37,11 @@ func (c Circle) perimeter() float64 {
 	return 2 * math.Pi * c.radius
 }
 
+func (c Circle) someOtherFunctionThatDoesntBelongToInterface() {
+	fmt.Println("This is from the circle")
+}
 
-// These methods accept a Shape type 
+// These methods accept a Shape type
 func calculateArea(shape Shape) float64 {
 	return shape.area()
 }
@@ -62,4 +65,6 @@ func main() {
 
 	fmt.Println(calculatePerimeter(circle))
 	fmt.Println(calculatePerimeter(rectangle))
+
+	circle.someOtherFunctionThatDoesntBelongToInterface()
 }
