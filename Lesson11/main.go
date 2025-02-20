@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 )
 
 type Expense interface {
@@ -29,6 +30,29 @@ func (e Email) print() {
 	fmt.Println(e.body)
 }
 
+// Good interface naming
+type Copier interface {
+	Copy(sourceFile string, destinationFile string) (bytesCopied int)
+}
+
+type Shape interface {
+	area() float64
+}
+
+type Circle struct {
+	radius float64
+}
+
+func (c Circle) area() float64 {
+	return math.Pi * c.radius * c.radius
+}
+
+func seeTypeAssertion(shape Shape) {
+	// Second param says wether the type is a circle
+	circle, isShape := shape.(Circle)
+	fmt.Printf("Is given shape a circle %v %v\n", isShape, circle)
+}
+
 func print(expense Expense, printer Printer) {
 	printer.print()
 	fmt.Println(expense.cost())
@@ -47,4 +71,11 @@ func main() {
 
 	print(email1, email1)
 	print(email2, email2)
+
+	// This is type assertion
+	circle := Circle{
+		radius: 2.0,
+	}
+
+	seeTypeAssertion(circle)
 }
