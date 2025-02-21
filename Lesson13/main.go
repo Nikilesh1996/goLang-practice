@@ -56,6 +56,20 @@ func sendSmsToCouple(messageToCustomer string, messageToSpouse string) (float64,
 	return costForCustomer + costForSpouse, nil
 }
 
+
+func sendCustomError() (string, error) {
+	return "This is the error", userError {name: "Nikilesh"}
+}
+
+// Custom error
+type userError struct {
+	name string
+}
+
+func (userError userError) Error() string {
+	return fmt.Sprintf("User %v is acting very cocky", userError.name)
+}
+
 func main() {
 	// How does go handle errors
 
@@ -78,4 +92,12 @@ func main() {
 	}
 
 	fmt.Println("The cost for the message is", cost)
+
+	msg, err := sendCustomError()
+	if err != nil {
+		fmt.Println(err.Error())
+		return
+	}
+
+	fmt.Println(msg)
 }
