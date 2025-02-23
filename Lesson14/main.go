@@ -9,6 +9,10 @@ func sendCustomError() error {
 	return errors.New("This is a custom error")
 }
 
+func moduloOperatorExample(divident int, divisor int) int {
+	return divident % divisor
+}
+
 func main() {
 	fmt.Println(sendCustomError().Error())
 
@@ -26,5 +30,10 @@ func main() {
 		index++
 	}
 
+	fmt.Println()
+
+	fmt.Println(moduloOperatorExample(4, 5))
+	fmt.Println(moduloOperatorExample(4, 2))
+	fmt.Println(moduloOperatorExample(4, 3))
 	fmt.Println()
 }
