@@ -44,6 +44,6 @@ func main() {
 	if test, err := deleteIfNecessary(myUsers, "gowramma"); err == nil {
 		fmt.Println("Gowramma", test)
 	}
-
+	
 	fmt.Println(len(myUsers))
 }
